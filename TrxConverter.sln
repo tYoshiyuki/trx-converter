@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrxConverter.CommonLibrary"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrxConverter.ConsoleApp", "TrxConverter.ConsoleApp\TrxConverter.ConsoleApp.csproj", "{92430C66-291A-4060-B090-CE28F5655DBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrxConverter.CommonLibrary.Test", "TrxConverter.CommonLibrary.Test\TrxConverter.CommonLibrary.Test.csproj", "{71FE00FA-3745-4734-961B-832274C22088}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{92430C66-291A-4060-B090-CE28F5655DBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92430C66-291A-4060-B090-CE28F5655DBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92430C66-291A-4060-B090-CE28F5655DBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71FE00FA-3745-4734-961B-832274C22088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71FE00FA-3745-4734-961B-832274C22088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71FE00FA-3745-4734-961B-832274C22088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71FE00FA-3745-4734-961B-832274C22088}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

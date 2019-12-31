@@ -10,15 +10,15 @@ namespace TrxConverter.CommonLibrary.Logic
         public static List<TestReportLine> Convert(TestRun testRun)
         {
             var report = new List<TestReportLine>();
-            foreach (var result in testRun.Results)
+            foreach (var result in testRun.Results ?? Enumerable.Empty<UnitTestResult>())
             {
-                var definition = testRun.TestDefinitions.FirstOrDefault(_ => _.Id == result.TestId);
+                var definition = testRun.TestDefinitions?.FirstOrDefault(_ => _.Id == result.TestId);
 
                 var line = new TestReportLine
                 {
                     TestClassName = definition?.TestMethod?.ClassName,
                     TestCaseName = result.TestName,
-                    TestCategory = string.Join(",", definition?.TestCategory?.Select(_ => _.TestCategory) ?? (string[])Enumerable.Empty<string>()),
+                    TestCategory = string.Join(",", definition?.TestCategory?.Select(_ => _.TestCategory) ?? Enumerable.Empty<string>()),
                     OutCome = result.Outcome,
                     Duration = DateTime.Parse(result.Duration),
                     StartTime = DateTime.Parse(result.StartTime),
@@ -28,7 +28,7 @@ namespace TrxConverter.CommonLibrary.Logic
                 };
 
                 var lines = new List<TestReportLine> { line };
-                foreach (var resultInner in result.InnerResults ?? (InnerUnitTestResult[])Enumerable.Empty<InnerUnitTestResult>())
+                foreach (var resultInner in result.InnerResults ?? Enumerable.Empty<InnerUnitTestResult>())
                 {
                     var inner = line.Clone();
                     inner.ParameterTestCaseName = resultInner.TestName;
