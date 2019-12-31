@@ -16,15 +16,15 @@ namespace TrxConverter.CommonLibrary.Logic
 
                 var line = new TestReportLine
                 {
-                    TestClassName = definition?.TestMethod.ClassName,
+                    TestClassName = definition?.TestMethod?.ClassName,
                     TestCaseName = result.TestName,
-                    TestCategory = string.Join(",", definition?.TestCategory.Select(_ => _.TestCategory) ?? (string[])Enumerable.Empty<string>()),
+                    TestCategory = string.Join(",", definition?.TestCategory?.Select(_ => _.TestCategory) ?? (string[])Enumerable.Empty<string>()),
                     OutCome = result.Outcome,
                     Duration = DateTime.Parse(result.Duration),
                     StartTime = DateTime.Parse(result.StartTime),
                     EndTime = DateTime.Parse(result.EndTime),
-                    ErrorMessage = result.Output?.ErrorInfo.Message,
-                    StackTrace = result.Output?.ErrorInfo.StackTrace
+                    ErrorMessage = result.Output?.ErrorInfo?.Message,
+                    StackTrace = result.Output?.ErrorInfo?.StackTrace
                 };
 
                 var lines = new List<TestReportLine> { line };
@@ -36,8 +36,8 @@ namespace TrxConverter.CommonLibrary.Logic
                     inner.ParameterTestStartTime = DateTime.Parse(resultInner.StartTime);
                     inner.ParameterTestEndTime = DateTime.Parse(resultInner.EndTime);
                     inner.ParameterTestDuration = DateTime.Parse(resultInner.Duration);
-                    inner.ParameterTestErrorMessage = resultInner.Output?.ErrorInfo.Message;
-                    inner.ParameterTestStackTrace = resultInner.Output?.ErrorInfo.StackTrace;
+                    inner.ParameterTestErrorMessage = resultInner.Output?.ErrorInfo?.Message;
+                    inner.ParameterTestStackTrace = resultInner.Output?.ErrorInfo?.StackTrace;
                     lines.Add(inner);
                 }
                 report.AddRange(lines);
