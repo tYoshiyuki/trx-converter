@@ -14,9 +14,15 @@ namespace TrxConverter.ConsoleApp
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("------ ツールの使用方法 ------");
-                Console.WriteLine("TrxConverter.ConsoleApp.exe <変換対象.trxファイルパス>");
-                Console.WriteLine("-----------------------------");
+                Console.WriteLine();
+                Console.WriteLine("TrxConverter");
+                Console.WriteLine();
+                Console.WriteLine("Description:");
+                Console.WriteLine("    Visual Studio テスト結果ファイル (.trx) を CSVファイルに変換するツール");
+                Console.WriteLine();
+                Console.WriteLine("Usage:");
+                Console.WriteLine("    TrxConverter.ConsoleApp.exe <変換対象.trxファイルパス>");
+                Console.WriteLine();
                 return;
             }
 
