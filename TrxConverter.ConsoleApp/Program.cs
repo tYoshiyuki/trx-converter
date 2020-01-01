@@ -30,20 +30,29 @@ namespace TrxConverter.ConsoleApp
             {
                 Console.WriteLine(".trxファイルの変換処理を開始します。");
 
-                var file = args.First();
-                Console.WriteLine($"対象ファイルパス: [{file}]");
+                var input = args.First();
+                Console.WriteLine($"対象ファイルパス: [{input}]");
 
-                var fs = new FileStream(file, FileMode.Open);
-                var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TestRun));
-                var model = (TestRun)serializer.Deserialize(fs);
+                var fileName = Path.GetFileName(input);
+                if (fileName == null) throw new ArgumentNullException(nameof(fileName));
 
-                var report = ConvertLogic.Convert(model);
+                var dirName = Path.GetDirectoryName(input);
+                if (dirName == null) throw new ArgumentNullException(nameof(dirName));
 
-                using (var writer = new StreamWriter($"Result_{DateTime.Now:yyyyMMddHHmmss}.csv", false, new UTF8Encoding(true)))
-                using (var csv = new CsvWriter(writer))
+                foreach (var file in Directory.EnumerateFiles(dirName, fileName, SearchOption.TopDirectoryOnly))
                 {
-                    csv.Configuration.RegisterClassMap<TestReportLineMap>();
-                    csv.WriteRecords(report);
+                    var fs = new FileStream(file, FileMode.Open);
+                    var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TestRun));
+                    var model = (TestRun)serializer.Deserialize(fs);
+
+                    var report = ConvertLogic.Convert(model);
+
+                    using (var writer = new StreamWriter($"{Path.GetFileNameWithoutExtension(file)}.csv", false, new UTF8Encoding(true)))
+                    using (var csv = new CsvWriter(writer))
+                    {
+                        csv.Configuration.RegisterClassMap<TestReportLineMap>();
+                        csv.WriteRecords(report);
+                    }
                 }
             }
             catch (Exception ex)
