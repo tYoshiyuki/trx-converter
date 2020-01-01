@@ -13,11 +13,11 @@ namespace TrxConverter.CommonLibrary.Models
 
         public string OutCome { get; set; }
 
-        public DateTime Duration { get; set; }
+        public DateTime? Duration { get; set; }
 
-        public DateTime StartTime { get; set; }
+        public DateTime? StartTime { get; set; }
 
-        public DateTime EndTime { get; set; }
+        public DateTime? EndTime { get; set; }
 
         public string ErrorMessage { get; set; }
 

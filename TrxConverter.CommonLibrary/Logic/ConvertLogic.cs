@@ -20,27 +20,31 @@ namespace TrxConverter.CommonLibrary.Logic
                     TestCaseName = result.TestName,
                     TestCategory = string.Join(",", definition?.TestCategory?.Select(_ => _.TestCategory) ?? Enumerable.Empty<string>()),
                     OutCome = result.Outcome,
-                    Duration = DateTime.Parse(result.Duration),
-                    StartTime = DateTime.Parse(result.StartTime),
-                    EndTime = DateTime.Parse(result.EndTime),
+                    Duration = DateTime.TryParse(result.Duration, out var parsedDuration) ? parsedDuration : (DateTime?)null,
+                    StartTime = DateTime.TryParse(result.StartTime, out var parsedStartTime) ? parsedStartTime : (DateTime?)null,
+                    EndTime = DateTime.TryParse(result.EndTime, out var parsedEndTime) ? parsedEndTime : (DateTime?)null,
                     ErrorMessage = result.Output?.ErrorInfo?.Message,
                     StackTrace = result.Output?.ErrorInfo?.StackTrace
                 };
 
-                var lines = new List<TestReportLine> { line };
-                foreach (var resultInner in result.InnerResults ?? Enumerable.Empty<InnerUnitTestResult>())
+                if (result.InnerResults == null)
+                {
+                    report.Add(line);
+                    continue;
+                }
+
+                foreach (var resultInner in result.InnerResults)
                 {
                     var inner = line.Clone();
                     inner.ParameterTestCaseName = resultInner.TestName;
                     inner.ParameterTestOutCome = resultInner.Outcome;
-                    inner.ParameterTestStartTime = DateTime.Parse(resultInner.StartTime);
-                    inner.ParameterTestEndTime = DateTime.Parse(resultInner.EndTime);
-                    inner.ParameterTestDuration = DateTime.Parse(resultInner.Duration);
+                    inner.ParameterTestStartTime = DateTime.TryParse(resultInner.StartTime, out var parsedParameterStartTime) ? parsedParameterStartTime : (DateTime?)null;
+                    inner.ParameterTestEndTime = DateTime.TryParse(resultInner.EndTime, out var parsedParameterEndTime) ? parsedParameterEndTime : (DateTime?)null;
+                    inner.ParameterTestDuration = DateTime.TryParse(resultInner.Duration, out var parsedParameterDuration) ? parsedParameterDuration : (DateTime?)null;
                     inner.ParameterTestErrorMessage = resultInner.Output?.ErrorInfo?.Message;
                     inner.ParameterTestStackTrace = resultInner.Output?.ErrorInfo?.StackTrace;
-                    lines.Add(inner);
+                    report.Add(inner);
                 }
-                report.AddRange(lines);
             }
             return report;
         }
