@@ -49,7 +49,6 @@ namespace TrxConverter.CommonLibrary.Models
         [XmlAttribute("start")]
         public DateTime Start { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("finish")]
         public DateTime Finish { get; set; }
     }
@@ -144,64 +143,49 @@ namespace TrxConverter.CommonLibrary.Models
     {
         public Output Output { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("executionId")]
         public string ExecutionId { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("parentExecutionId")]
         public string ParentExecutionId { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("testId")]
         public string TestId { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("testName")]
         public string TestName { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("computerName")]
         public string ComputerName { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("duration")]
         public string Duration { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("startTime")]
         public string StartTime { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("endTime")]
         public string EndTime { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("testType")]
         public string TestType { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("outcome")]
         public string Outcome { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("testListId")]
         public string TestListId { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("relativeResultsDirectory")]
         public string RelativeResultsDirectory { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("dataRowInfo")]
         public byte DataRowInfo { get; set; }
 
-        /// <remarks/>
         [XmlAttribute("resultType")]
         public string ResultType { get; set; }
     }
 
-    /// <remarks/>
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class UnitTest

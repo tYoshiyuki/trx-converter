@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrxConverter.CommonLibrary"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrxConverter.ConsoleApp", "TrxConverter.ConsoleApp\TrxConverter.ConsoleApp.csproj", "{92430C66-291A-4060-B090-CE28F5655DBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrxConverter.CommonLibrary.Test", "TrxConverter.CommonLibrary.Test\TrxConverter.CommonLibrary.Test.csproj", "{71FE00FA-3745-4734-961B-832274C22088}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TrxConverter.CommonLibrary.Test", "TrxConverter.CommonLibrary.Test\TrxConverter.CommonLibrary.Test.csproj", "{71FE00FA-3745-4734-961B-832274C22088}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

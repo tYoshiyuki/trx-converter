@@ -1,0 +1,118 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>TrxConverter</id>
+    <version>1.0.1.0</version>
+    <title>TrxConverter</title>
+    <authors>yoshiyuki tsunomoto</authors>
+    <owners>yoshiyuki tsunomoto</owners>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/tYoshiyuki/trx-converter</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Convert .trx file to CSV</description>
+    <language>en-US</language>
+    <tags></tags>
+  </metadata>
+  <files>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\CsvHelper.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Win32.Primitives.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\netstandard.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.AppContext.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Collections.Concurrent.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Collections.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Collections.NonGeneric.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Collections.Specialized.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.ComponentModel.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.ComponentModel.EventBasedAsync.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.ComponentModel.Primitives.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.ComponentModel.TypeConverter.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Console.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Data.Common.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.Contracts.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.Debug.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.FileVersionInfo.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.Process.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.StackTrace.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.TextWriterTraceListener.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.Tools.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.TraceSource.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Diagnostics.Tracing.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Drawing.Primitives.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Dynamic.Runtime.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Globalization.Calendars.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Globalization.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Globalization.Extensions.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.Compression.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.Compression.ZipFile.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.FileSystem.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.FileSystem.DriveInfo.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.FileSystem.Primitives.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.FileSystem.Watcher.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.IsolatedStorage.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.MemoryMappedFiles.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.Pipes.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.IO.UnmanagedMemoryStream.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Linq.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Linq.Expressions.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Linq.Parallel.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Linq.Queryable.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.Http.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.NameResolution.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.NetworkInformation.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.Ping.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.Primitives.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.Requests.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.Security.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.Sockets.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.WebHeaderCollection.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.WebSockets.Client.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Net.WebSockets.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.ObjectModel.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Reflection.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Reflection.Extensions.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Reflection.Primitives.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Resources.Reader.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Resources.ResourceManager.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Resources.Writer.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.CompilerServices.VisualC.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.Extensions.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.Handles.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.InteropServices.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.Numerics.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.Serialization.Formatters.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.Serialization.Json.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.Serialization.Primitives.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.Serialization.Xml.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Security.Claims.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Security.Cryptography.Algorithms.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Security.Cryptography.Csp.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Security.Cryptography.Encoding.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Security.Cryptography.Primitives.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Security.Cryptography.X509Certificates.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Security.Principal.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Security.SecureString.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Text.Encoding.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Text.Encoding.Extensions.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Text.RegularExpressions.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Overlapped.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Tasks.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Tasks.Parallel.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Thread.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.ThreadPool.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Timer.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.ValueTuple.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Xml.ReaderWriter.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Xml.XDocument.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Xml.XmlDocument.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Xml.XmlSerializer.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Xml.XPath.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Xml.XPath.XDocument.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.CommonLibrary.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.ConsoleApp.exe" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.ConsoleApp.exe.config" target="tools"/>
+  </files>
+</package>
