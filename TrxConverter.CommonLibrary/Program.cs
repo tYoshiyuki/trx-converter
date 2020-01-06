@@ -37,7 +37,7 @@ namespace TrxConverter.CommonLibrary
                 if (fileName == null) throw new ArgumentNullException(nameof(fileName));
 
                 var dirName = Path.GetDirectoryName(input);
-                if (dirName == null) throw new ArgumentNullException(nameof(dirName));
+                if (string.IsNullOrEmpty(dirName)) dirName = Directory.GetCurrentDirectory();
 
                 foreach (var file in Directory.EnumerateFiles(dirName, fileName, SearchOption.TopDirectoryOnly))
                 {

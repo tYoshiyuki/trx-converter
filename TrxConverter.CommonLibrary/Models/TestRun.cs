@@ -180,7 +180,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string RelativeResultsDirectory { get; set; }
 
         [XmlAttribute("dataRowInfo")]
-        public byte DataRowInfo { get; set; }
+        public int DataRowInfo { get; set; }
 
         [XmlAttribute("resultType")]
         public string ResultType { get; set; }
@@ -282,51 +282,51 @@ namespace TrxConverter.CommonLibrary.Models
     public class Counters
     {
         [XmlAttribute("total")]
-        public byte Total { get; set; }
+        public int Total { get; set; }
 
         [XmlAttribute("executed")]
-        public byte Executed { get; set; }
+        public int Executed { get; set; }
 
         [XmlAttribute("passed")]
-        public byte Passed { get; set; }
+        public int Passed { get; set; }
 
         [XmlAttribute("failed")]
-        public byte Failed { get; set; }
+        public int Failed { get; set; }
 
         [XmlAttribute("error")]
-        public byte Error { get; set; }
+        public int Error { get; set; }
 
         [XmlAttribute("timeout")]
-        public byte Timeout { get; set; }
+        public int Timeout { get; set; }
 
         [XmlAttribute("aborted")]
-        public byte Aborted { get; set; }
+        public int Aborted { get; set; }
 
         [XmlAttribute("inconclusive")]
-        public byte Inconclusive { get; set; }
+        public int Inconclusive { get; set; }
 
         [XmlAttribute("passedButRunAborted")]
-        public byte PassedButRunAborted { get; set; }
+        public int PassedButRunAborted { get; set; }
 
         [XmlAttribute("notRunnable")]
-        public byte NotRunnable { get; set; }
+        public int NotRunnable { get; set; }
 
         [XmlAttribute("notExecuted")]
-        public byte NotExecuted { get; set; }
+        public int NotExecuted { get; set; }
 
         [XmlAttribute("disconnected")]
-        public byte Disconnected { get; set; }
+        public int Disconnected { get; set; }
 
         [XmlAttribute("warning")]
-        public byte Warning { get; set; }
+        public int Warning { get; set; }
 
         [XmlAttribute("completed")]
-        public byte Completed { get; set; }
+        public int Completed { get; set; }
 
         [XmlAttribute("inProgress")]
-        public byte InProgress { get; set; }
+        public int InProgress { get; set; }
 
         [XmlAttribute("pending")]
-        public byte Pending { get; set; }
+        public int Pending { get; set; }
     }
 }
