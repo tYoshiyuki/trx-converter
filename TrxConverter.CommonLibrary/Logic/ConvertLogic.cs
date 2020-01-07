@@ -17,6 +17,7 @@ namespace TrxConverter.CommonLibrary.Logic
                 var line = new TestReportLine
                 {
                     TestClassName = definition?.TestMethod?.ClassName,
+                    TestShortClassName = definition?.TestMethod?.ClassName?.Split('.').LastOrDefault(),
                     TestCaseName = result.TestName,
                     TestCategory = string.Join(",", definition?.TestCategory?.Select(_ => _.TestCategory) ?? Enumerable.Empty<string>()),
                     OutCome = result.Outcome,

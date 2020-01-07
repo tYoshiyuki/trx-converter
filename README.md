@@ -15,6 +15,7 @@ TrxConverter.ConsoleApp.exe <変換対象.trxファイルパス>
 |  .trx file  |  CSV  |
 | ---- | ---- |
 | UnitTest > TestMethod > className | TestClassName |
+| UnitTest > TestMethod > className (クラス名部分)  | TestShortClassName |
 | UnitTestResult > testName | TestCaseName |
 | UnitTest > TestCategoryItem > TestCategory | TestCategory |
 | UnitTestResult > outcome | OutCome |

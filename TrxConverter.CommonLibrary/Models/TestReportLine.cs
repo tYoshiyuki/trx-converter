@@ -7,6 +7,8 @@ namespace TrxConverter.CommonLibrary.Models
     {
         public string TestClassName { get; set; }
 
+        public string TestShortClassName { get; set; }
+
         public string TestCaseName { get; set; }
 
         public string TestCategory { get; set; }

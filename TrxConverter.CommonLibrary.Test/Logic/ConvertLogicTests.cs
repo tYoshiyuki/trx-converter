@@ -144,7 +144,7 @@ namespace TrxConverter.CommonLibrary.Test.Logic
                 new UnitTestResult
                 {
                     TestId = "TestId001",
-                    TestName = "TestName001",
+                    TestName = "Namespace.TestName001",
                     Outcome = "Outcome001",
                     Duration = "2019/12/31 10:00:00",
                     StartTime = "2019/12/31 11:00:00",
@@ -186,7 +186,7 @@ namespace TrxConverter.CommonLibrary.Test.Logic
                     {
                         new InnerUnitTestResult
                         {
-                            TestName = "InnerTestName001",
+                            TestName = "Namespace.InnerTestName001",
                             Outcome = "InnerOutcome001",
                             Duration = "2019/12/31 10:00:00",
                             StartTime = "2019/12/31 11:00:00",
@@ -202,7 +202,7 @@ namespace TrxConverter.CommonLibrary.Test.Logic
                         },
                         new InnerUnitTestResult
                         {
-                            TestName = "InnerTestName002",
+                            TestName = "Namespace.InnerTestName002",
                             Outcome = "InnerOutcome002",
                             Duration = "2019/12/31 10:10:00",
                             StartTime = "2019/12/31 11:10:00",
