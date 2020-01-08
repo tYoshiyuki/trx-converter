@@ -25,6 +25,8 @@ namespace TrxConverter.CommonLibrary.Models
 
         public string StackTrace { get; set; }
 
+        public string StdOut { get; set; }
+
         public string ParameterTestCaseName { get; set; }
 
         public string ParameterTestOutCome { get; set; }
@@ -38,6 +40,8 @@ namespace TrxConverter.CommonLibrary.Models
         public string ParameterTestErrorMessage { get; set; }
 
         public string ParameterTestStackTrace { get; set; }
+
+        public string ParameterTestStdOut { get; set; }
 
         public TestReportLine Clone()
         {

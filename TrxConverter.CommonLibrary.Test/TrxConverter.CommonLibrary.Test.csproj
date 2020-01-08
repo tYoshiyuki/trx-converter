@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="sample-data-20200101.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="xunit" Version="2.4.0" />

@@ -124,6 +124,7 @@ namespace TrxConverter.CommonLibrary.Models
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class Output
     {
+        public string StdOut { get; set; }
         public ErrorInfo ErrorInfo { get; set; }
     }
 

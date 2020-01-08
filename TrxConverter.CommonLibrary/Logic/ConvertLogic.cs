@@ -25,7 +25,8 @@ namespace TrxConverter.CommonLibrary.Logic
                     StartTime = DateTime.TryParse(result.StartTime, out var parsedStartTime) ? parsedStartTime : (DateTime?)null,
                     EndTime = DateTime.TryParse(result.EndTime, out var parsedEndTime) ? parsedEndTime : (DateTime?)null,
                     ErrorMessage = result.Output?.ErrorInfo?.Message,
-                    StackTrace = result.Output?.ErrorInfo?.StackTrace
+                    StackTrace = result.Output?.ErrorInfo?.StackTrace,
+                    StdOut = result.Output?.StdOut
                 };
 
                 if (result.InnerResults == null)
@@ -44,6 +45,7 @@ namespace TrxConverter.CommonLibrary.Logic
                     inner.ParameterTestDuration = DateTime.TryParse(resultInner.Duration, out var parsedParameterDuration) ? parsedParameterDuration : (DateTime?)null;
                     inner.ParameterTestErrorMessage = resultInner.Output?.ErrorInfo?.Message;
                     inner.ParameterTestStackTrace = resultInner.Output?.ErrorInfo?.StackTrace;
+                    inner.ParameterTestStdOut = resultInner.Output?.StdOut;
                     report.Add(inner);
                 }
             }

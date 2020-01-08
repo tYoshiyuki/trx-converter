@@ -24,6 +24,7 @@ TrxConverter.ConsoleApp.exe <変換対象.trxファイルパス>
 | UnitTestResult > endTime | EndTime |
 | UnitTestResult > Output > ErrorInfo > Message | ErrorMessage |
 | UnitTestResult > Output > ErrorInfo > StackTrace | StackTrace |
+| UnitTestResult > Output > StdOut | StdOut |
 | UnitTestResult > InnerResults > UnitTestResult > testName | ParameterTestCaseName |
 | UnitTestResult > InnerResults > UnitTestResult > outcome | ParameterTestOutCome |
 | UnitTestResult > InnerResults > UnitTestResult > duration | ParameterTestDuration |
@@ -31,3 +32,4 @@ TrxConverter.ConsoleApp.exe <変換対象.trxファイルパス>
 | UnitTestResult > InnerResults > UnitTestResult > endTime | ParameterTestEndTime |
 | UnitTestResult > InnerResults > UnitTestResult > Output > ErrorInfo > Message | ParameterTestErrorMessage |
 | UnitTestResult > InnerResults > UnitTestResult > Output > ErrorInfo > StackTrace | ParameterTestStackTrace |
+| UnitTestResult > InnerResults > UnitTestResult > Output > StdOut | ParameterStdOut |
