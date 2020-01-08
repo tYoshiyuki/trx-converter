@@ -10,8 +10,9 @@ namespace TrxConverter.CommonLibrary
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static bool Main(string[] args)
         {
+            var result = true;
             if (args.Length == 0)
             {
                 Console.WriteLine();
@@ -23,7 +24,7 @@ namespace TrxConverter.CommonLibrary
                 Console.WriteLine("Usage:");
                 Console.WriteLine("    TrxConverter.ConsoleApp.exe <変換対象.trxファイルパス>");
                 Console.WriteLine();
-                return;
+                return true;
             }
 
             try
@@ -60,10 +61,11 @@ namespace TrxConverter.CommonLibrary
                 Console.Error.WriteLine("変換処理に失敗しました。");
                 Console.Error.WriteLine(ex.Message);
                 Console.Error.WriteLine(ex.StackTrace);
+                result = false;
             }
 
             Console.WriteLine("変換処理が完了しました。");
-
+            return result;
         }
     }
 }

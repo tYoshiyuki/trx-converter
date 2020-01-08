@@ -2,9 +2,9 @@
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
-            CommonLibrary.Program.Main(args);
+            return CommonLibrary.Program.Main(args) ? 0 : 1;
         }
     }
 }
