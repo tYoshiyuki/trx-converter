@@ -1,19 +1,24 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Xml;
+using System.Xml.Serialization;
 using CsvHelper;
 using TrxConverter.CommonLibrary.Logic;
 using TrxConverter.CommonLibrary.Models;
 
 namespace TrxConverter.CommonLibrary
 {
-    public class Program
+    public static class Program
     {
+        [SuppressMessage("Microsoft.Globalization", "CA1303")]
+        [SuppressMessage("Design", "CA1031:一般的な例外の種類はキャッチしません")]
         public static bool Main(string[] args)
         {
             var result = true;
-            if (args.Length == 0)
+            if (args == null || args.Length == 0)
             {
                 Console.WriteLine();
                 Console.WriteLine("TrxConverter");
@@ -35,24 +40,27 @@ namespace TrxConverter.CommonLibrary
                 Console.WriteLine($"対象ファイルパス: [{input}]");
 
                 var fileName = Path.GetFileName(input);
-                if (fileName == null) throw new ArgumentNullException(nameof(fileName));
+                if (fileName == null) throw new ArgumentException("変換対象となる.trxファイルパスを指定して下さい");
 
                 var dirName = Path.GetDirectoryName(input);
                 if (string.IsNullOrEmpty(dirName)) dirName = Directory.GetCurrentDirectory();
 
                 foreach (var file in Directory.EnumerateFiles(dirName, fileName, SearchOption.TopDirectoryOnly))
                 {
-                    var fs = new FileStream(file, FileMode.Open);
-                    var serializer = new System.Xml.Serialization.XmlSerializer(typeof(TestRun));
-                    var model = (TestRun)serializer.Deserialize(fs);
-
-                    var report = ConvertLogic.Convert(model);
-
-                    using (var writer = new StreamWriter($"{Path.GetFileNameWithoutExtension(file)}.csv", false, new UTF8Encoding(true)))
-                    using (var csv = new CsvWriter(writer))
+                    using (var fs = new FileStream(file, FileMode.Open))
+                    using (var xml = XmlReader.Create(fs))
                     {
-                        csv.Configuration.RegisterClassMap<TestReportLineMap>();
-                        csv.WriteRecords(report);
+                        var serializer = new XmlSerializer(typeof(TestRun));
+                        var model = (TestRun)serializer.Deserialize(xml);
+
+                        var report = ConvertLogic.Convert(model);
+
+                        using (var writer = new StreamWriter($"{Path.GetFileNameWithoutExtension(file)}.csv", false, new UTF8Encoding(true)))
+                        using (var csv = new CsvWriter(writer))
+                        {
+                            csv.Configuration.RegisterClassMap<TestReportLineMap>();
+                            csv.WriteRecords(report);
+                        }
                     }
                 }
             }

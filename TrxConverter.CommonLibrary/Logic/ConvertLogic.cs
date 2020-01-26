@@ -9,6 +9,8 @@ namespace TrxConverter.CommonLibrary.Logic
     {
         public static List<TestReportLine> Convert(TestRun testRun)
         {
+            if (testRun == null) throw new ArgumentNullException(nameof(testRun));
+
             var report = new List<TestReportLine>();
             foreach (var result in testRun.Results ?? Enumerable.Empty<UnitTestResult>())
             {
