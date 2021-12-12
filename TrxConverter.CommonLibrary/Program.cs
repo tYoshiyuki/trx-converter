@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,8 +13,6 @@ namespace TrxConverter.CommonLibrary
 {
     public static class Program
     {
-        [SuppressMessage("Microsoft.Globalization", "CA1303")]
-        [SuppressMessage("Design", "CA1031:一般的な例外の種類はキャッチしません")]
         public static bool Main(string[] args)
         {
             var result = true;
@@ -56,9 +54,9 @@ namespace TrxConverter.CommonLibrary
                         var report = ConvertLogic.Convert(model);
 
                         using (var writer = new StreamWriter($"{Path.GetFileNameWithoutExtension(file)}.csv", false, new UTF8Encoding(true)))
-                        using (var csv = new CsvWriter(writer))
+                        using (var csv = new CsvWriter(writer, CultureInfo.CurrentCulture))
                         {
-                            csv.Configuration.RegisterClassMap<TestReportLineMap>();
+                            csv.Context.RegisterClassMap<TestReportLineMap>();
                             csv.WriteRecords(report);
                         }
                     }

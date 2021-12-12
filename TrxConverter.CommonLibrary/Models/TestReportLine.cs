@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using CsvHelper.Configuration;
 
 namespace TrxConverter.CommonLibrary.Models
@@ -53,7 +54,7 @@ namespace TrxConverter.CommonLibrary.Models
     {
         public TestReportLineMap()
         {
-            AutoMap();
+            AutoMap(CultureInfo.CurrentCulture);
             Map(m => m.Duration).TypeConverterOption.Format("HH:mm:ss");
             Map(m => m.StartTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss");
             Map(m => m.EndTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss");

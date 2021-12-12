@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Xml.Serialization;
 
@@ -16,19 +15,15 @@ namespace TrxConverter.CommonLibrary.Models
 
 
         [XmlArrayItem("UnitTestResult", IsNullable = false)]
-        [SuppressMessage("Performance", "CA1819:プロパティは配列を返すことはできません")]
         public UnitTestResult[] Results { get; set; }
 
         [XmlArrayItem("UnitTest", IsNullable = false)]
-        [SuppressMessage("Performance", "CA1819:プロパティは配列を返すことはできません")]
         public UnitTest[] TestDefinitions { get; set; }
 
         [XmlArrayItem("TestEntry", IsNullable = false)]
-        [SuppressMessage("Performance", "CA1819:プロパティは配列を返すことはできません")]
         public TestEntry[] TestEntries { get; set; }
 
         [XmlArrayItem("TestList", IsNullable = false)]
-        [SuppressMessage("Performance", "CA1819:プロパティは配列を返すことはできません")]
         public TestList[] TestLists { get; set; }
 
         public ResultSummary ResultSummary { get; set; }
@@ -89,7 +84,6 @@ namespace TrxConverter.CommonLibrary.Models
         public Output Output { get; set; }
 
         [XmlArrayItem("UnitTestResult", IsNullable = false)]
-        [SuppressMessage("Performance", "CA1819:プロパティは配列を返すことはできません")]
         public InnerUnitTestResult[] InnerResults { get; set; }
 
         [XmlAttribute("executionId")]
@@ -201,7 +195,6 @@ namespace TrxConverter.CommonLibrary.Models
     public class UnitTest
     {
         [XmlArrayItem("TestCategoryItem", IsNullable = false)]
-        [SuppressMessage("Performance", "CA1819:プロパティは配列を返すことはできません")]
         public TestCategoryItem[] TestCategory { get; set; }
 
         public Execution Execution { get; set; }
