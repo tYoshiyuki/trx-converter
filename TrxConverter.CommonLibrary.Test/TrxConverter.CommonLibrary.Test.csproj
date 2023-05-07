@@ -11,9 +11,21 @@
   <ItemGroup>
     <None Remove="sample-data-20200102.trx" />
     <None Remove="sample-data-20200103.trx" />
+    <None Remove="sample-data-20200104-01.trx" />
+    <None Remove="sample-data-20200104-02.trx" />
+    <None Remove="sample-data-20200104-03.trx" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="sample-data-20200104-02.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sample-data-20200104-03.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="sample-data-20200104-01.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="sample-data-20200101.trx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

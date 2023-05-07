@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 
 namespace TrxConverter.CommonLibrary.Models
 {
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     [XmlRoot(Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010", IsNullable = false)]
@@ -38,6 +39,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string RunUser { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class TestRunTimes
@@ -55,6 +57,7 @@ namespace TrxConverter.CommonLibrary.Models
         public DateTime Finish { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class TestSettings
@@ -68,6 +71,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string Id { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     [SuppressMessage("Microsoft.Naming", "CA1724:TypeNamesShouldNotMatchNamespaces")]
@@ -77,6 +81,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string RunDeploymentRoot { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class UnitTestResult
@@ -123,6 +128,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string ResultType { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class Output
@@ -131,6 +137,7 @@ namespace TrxConverter.CommonLibrary.Models
         public ErrorInfo ErrorInfo { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class ErrorInfo
@@ -141,6 +148,7 @@ namespace TrxConverter.CommonLibrary.Models
     }
 
     /// <remarks/>
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class InnerUnitTestResult
@@ -190,6 +198,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string ResultType { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class UnitTest
@@ -212,6 +221,7 @@ namespace TrxConverter.CommonLibrary.Models
     }
 
     /// <remarks/>
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class TestCategoryItem
@@ -220,6 +230,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string TestCategory { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class Execution
@@ -228,6 +239,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string Id { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class TestMethod
@@ -245,6 +257,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string Name { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class TestEntry
@@ -260,6 +273,7 @@ namespace TrxConverter.CommonLibrary.Models
     }
 
     /// <remarks/>
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class TestList
@@ -271,6 +285,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string Id { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class ResultSummary
@@ -281,6 +296,7 @@ namespace TrxConverter.CommonLibrary.Models
         public string Outcome { get; set; }
     }
 
+    [ExcludeFromCodeCoverage]
     [Serializable]
     [XmlType(AnonymousType = true, Namespace = "http://microsoft.com/schemas/VisualStudio/TeamTest/2010")]
     public class Counters

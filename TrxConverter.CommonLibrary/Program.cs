@@ -38,7 +38,7 @@ namespace TrxConverter.CommonLibrary
                 Console.WriteLine($"対象ファイルパス: [{input}]");
 
                 var fileName = Path.GetFileName(input);
-                if (fileName == null) throw new ArgumentException("変換対象となる.trxファイルパスを指定して下さい");
+                if (string.IsNullOrEmpty(fileName)) throw new ArgumentException("変換対象となる.trxファイルパスを指定して下さい");
 
                 var dirName = Path.GetDirectoryName(input);
                 if (string.IsNullOrEmpty(dirName)) dirName = Directory.GetCurrentDirectory();

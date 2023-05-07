@@ -137,6 +137,13 @@ namespace TrxConverter.CommonLibrary.Test.Logic
             }
         }
 
+        [Fact]
+        public void Convert_異常系_引数がNULLの場合()
+        {
+            // Arrange・Act・Assert
+            Assert.Throws<ArgumentNullException>(() => ConvertLogic.Convert(null));
+        }
+
         private static UnitTestResult[] GetUnitTestResultTestData()
         {
             return new[]

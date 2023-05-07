@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="baa1dc8f-61eb-433f-af56-c4afff84413a" name="VssAdministrator@fv-az38 2020-01-06 14:59:58" runUser="fv-az38\VssAdministrator" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2020-01-06T14:59:58.1335732+00:00" queuing="2020-01-06T14:59:58.1335732+00:00" start="2020-01-06T14:59:56.2953328+00:00" finish="2020-01-06T15:00:05.3360210+00:00" />
+  <TestSettings name="default" id="b1d9fef8-5ddf-4235-ba93-58a1ac9f29c2">
+    <Deployment runDeploymentRoot="VssAdministrator_fv-az38_2020-01-06_14_59_58" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2a2bd2fe-7b77-4eb0-b6ad-c870ef8df052" testId="74cae8b0-b218-ea53-604d-170265047e39" testName="Get_ById_対象無し" computerName="fv-az38" duration="00:00:00.0032766" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.0862892+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2a2bd2fe-7b77-4eb0-b6ad-c870ef8df052" />
+    <UnitTestResult executionId="756684b2-1e82-4789-888c-a41cd8d918f8" testId="40a0a59e-c5cb-e89f-b511-516775ecc8ab" testName="Get_ById_正常系" computerName="fv-az38" duration="00:00:00.0068628" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.0862892+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="756684b2-1e82-4789-888c-a41cd8d918f8" resultType="DataDrivenTest">
+      <InnerResults>
+        <UnitTestResult executionId="ce5fb25d-bcb8-404a-ab26-486acc3e4159" parentExecutionId="756684b2-1e82-4789-888c-a41cd8d918f8" testId="40a0a59e-c5cb-e89f-b511-516775ecc8ab" testName="Get_ById_正常系 (1)" computerName="fv-az38" duration="00:00:00.0035465" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.0862892+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ce5fb25d-bcb8-404a-ab26-486acc3e4159" dataRowInfo="1" resultType="DataDrivenDataRow" />
+        <UnitTestResult executionId="fcf25456-3127-4a43-b8a2-406073b4fc6f" parentExecutionId="756684b2-1e82-4789-888c-a41cd8d918f8" testId="40a0a59e-c5cb-e89f-b511-516775ecc8ab" testName="Get_ById_正常系 (2)" computerName="fv-az38" duration="00:00:00.0001219" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.0862892+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fcf25456-3127-4a43-b8a2-406073b4fc6f" dataRowInfo="2" resultType="DataDrivenDataRow" />
+        <UnitTestResult executionId="0021abc2-ff6e-4b0b-acf1-26bc8c9f099f" parentExecutionId="756684b2-1e82-4789-888c-a41cd8d918f8" testId="40a0a59e-c5cb-e89f-b511-516775ecc8ab" testName="Get_ById_正常系 (3)" computerName="fv-az38" duration="00:00:00.0001440" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.0862892+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0021abc2-ff6e-4b0b-acf1-26bc8c9f099f" dataRowInfo="3" resultType="DataDrivenDataRow" />
+      </InnerResults>
+    </UnitTestResult>
+    <UnitTestResult executionId="06592cc5-0f67-4c46-9e40-0c60e4ef959b" testId="9ef92dfc-f5d4-92e1-92c8-09cadb414909" testName="Get_正常系" computerName="fv-az38" duration="00:00:01.7040932" startTime="2020-01-06T14:59:58.8062819+00:00" endTime="2020-01-06T15:00:04.4413611+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="06592cc5-0f67-4c46-9e40-0c60e4ef959b" />
+    <UnitTestResult executionId="4ad13e8b-4277-4e8b-b782-e9ff1117a410" testId="345e54eb-29ee-4140-8a1d-fbd271cba37b" testName="Get_by_id_正常系" computerName="fv-az38" duration="00:00:00.0395181" startTime="2020-01-06T15:00:04.4413611+00:00" endTime="2020-01-06T15:00:04.4726133+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4ad13e8b-4277-4e8b-b782-e9ff1117a410" />
+    <UnitTestResult executionId="40ce2b00-7463-45b2-8ae0-9be116519b42" testId="a23234f6-39ed-c19f-e207-671cd7ef9f03" testName="HandleException" computerName="fv-az38" duration="00:00:00.4469204" startTime="2020-01-06T14:59:58.1019168+00:00" endTime="2020-01-06T14:59:58.8062819+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="40ce2b00-7463-45b2-8ae0-9be116519b42" />
+    <UnitTestResult executionId="a37aa16f-bd1e-49c9-896f-225f158265e1" testId="c8a28c7f-ca94-d7f2-60de-0c23118982f8" testName="Get_正常系" computerName="fv-az38" duration="00:00:00.2427827" startTime="2020-01-06T14:59:57.8349697+00:00" endTime="2020-01-06T14:59:58.0862892+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a37aa16f-bd1e-49c9-896f-225f158265e1" />
+    <UnitTestResult executionId="9206d939-26be-43e5-94de-67b90b329178" testId="3cfe85f9-2f1f-e14c-b8a1-9a6e63014497" testName="Update_正常系" computerName="fv-az38" duration="00:00:00.0098186" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.1019168+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9206d939-26be-43e5-94de-67b90b329178" resultType="DataDrivenTest">
+      <InnerResults>
+        <UnitTestResult executionId="bcdacd60-a2a9-4790-9f1b-31d4c0b5e099" parentExecutionId="9206d939-26be-43e5-94de-67b90b329178" testId="3cfe85f9-2f1f-e14c-b8a1-9a6e63014497" testName="Update_正常系 (DotNetOwinWebApiSample.Api.Models.Todo)" computerName="fv-az38" duration="00:00:00.0067372" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.1019168+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bcdacd60-a2a9-4790-9f1b-31d4c0b5e099" dataRowInfo="1" resultType="DataDrivenDataRow" />
+        <UnitTestResult executionId="fde20d04-2eae-4a19-9a86-66659a337a84" parentExecutionId="9206d939-26be-43e5-94de-67b90b329178" testId="3cfe85f9-2f1f-e14c-b8a1-9a6e63014497" testName="Update_正常系 (DotNetOwinWebApiSample.Api.Models.Todo)" computerName="fv-az38" duration="00:00:00.0004468" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.1019168+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="fde20d04-2eae-4a19-9a86-66659a337a84" dataRowInfo="2" resultType="DataDrivenDataRow" />
+        <UnitTestResult executionId="e3b69d71-d080-41c3-901f-d46bf888fb9f" parentExecutionId="9206d939-26be-43e5-94de-67b90b329178" testId="3cfe85f9-2f1f-e14c-b8a1-9a6e63014497" testName="Update_正常系 (DotNetOwinWebApiSample.Api.Models.Todo)" computerName="fv-az38" duration="00:00:00.0001795" startTime="2020-01-06T14:59:58.0862892+00:00" endTime="2020-01-06T14:59:58.1019168+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e3b69d71-d080-41c3-901f-d46bf888fb9f" dataRowInfo="3" resultType="DataDrivenDataRow" />
+      </InnerResults>
+    </UnitTestResult>
+    <UnitTestResult executionId="d6fa8ceb-b564-4747-b3e5-f572775c4c15" testId="7c450ccc-56e2-3f84-48f6-d34f02953440" testName="Get_正常系" computerName="fv-az38" duration="00:00:00.0210199" startTime="2020-01-06T14:59:57.6943099+00:00" endTime="2020-01-06T14:59:57.8193174+00:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d6fa8ceb-b564-4747-b3e5-f572775c4c15" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="HandleException" storage="d:\a\1\s\dotnetowinwebapisample.api.test\bin\debug\dotnetowinwebapisample.api.test.dll" id="a23234f6-39ed-c19f-e207-671cd7ef9f03">
+      <Execution id="40ce2b00-7463-45b2-8ae0-9be116519b42" />
+      <TestMethod codeBase="D:\a\1\s\DotNetOwinWebApiSample.Api.Test\bin\Debug\DotNetOwinWebApiSample.Api.Test.dll" adapterTypeName="executor://mstestadapter/v2" className="DotNetOwinWebApiSample.Api.Test.Middlewares.ErrorHandlingMiddlewareTest" name="HandleException" />
+    </UnitTest>
+    <UnitTest name="Update_正常系" storage="d:\a\1\s\dotnetowinwebapisample.api.test\bin\debug\dotnetowinwebapisample.api.test.dll" id="3cfe85f9-2f1f-e14c-b8a1-9a6e63014497">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Todo" />
+        <TestCategoryItem TestCategory="Logic" />
+      </TestCategory>
+      <Execution id="9206d939-26be-43e5-94de-67b90b329178" />
+      <TestMethod codeBase="D:\a\1\s\DotNetOwinWebApiSample.Api.Test\bin\Debug\DotNetOwinWebApiSample.Api.Test.dll" adapterTypeName="executor://mstestadapter/v2" className="DotNetOwinWebApiSample.Api.Test.Services.TodoServiceTest" name="Update_正常系" />
+    </UnitTest>
+    <UnitTest name="Get_by_id_正常系" storage="d:\a\1\s\dotnetowinwebapisample.api.test\bin\debug\dotnetowinwebapisample.api.test.dll" id="345e54eb-29ee-4140-8a1d-fbd271cba37b">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Todo" />
+        <TestCategoryItem TestCategory="Integration" />
+      </TestCategory>
+      <Execution id="4ad13e8b-4277-4e8b-b782-e9ff1117a410" />
+      <TestMethod codeBase="D:\a\1\s\DotNetOwinWebApiSample.Api.Test\bin\Debug\DotNetOwinWebApiSample.Api.Test.dll" adapterTypeName="executor://mstestadapter/v2" className="DotNetOwinWebApiSample.Api.Test.Controllers.TodoControllerTest" name="Get_by_id_正常系" />
+    </UnitTest>
+    <UnitTest name="Get_正常系" storage="d:\a\1\s\dotnetowinwebapisample.api.test\bin\debug\dotnetowinwebapisample.api.test.dll" id="9ef92dfc-f5d4-92e1-92c8-09cadb414909">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Todo" />
+        <TestCategoryItem TestCategory="Integration" />
+      </TestCategory>
+      <Execution id="06592cc5-0f67-4c46-9e40-0c60e4ef959b" />
+      <TestMethod codeBase="D:\a\1\s\DotNetOwinWebApiSample.Api.Test\bin\Debug\DotNetOwinWebApiSample.Api.Test.dll" adapterTypeName="executor://mstestadapter/v2" className="DotNetOwinWebApiSample.Api.Test.Controllers.TodoControllerTest" name="Get_正常系" />
+    </UnitTest>
+    <UnitTest name="Get_ById_正常系" storage="d:\a\1\s\dotnetowinwebapisample.api.test\bin\debug\dotnetowinwebapisample.api.test.dll" id="40a0a59e-c5cb-e89f-b511-516775ecc8ab">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Todo" />
+        <TestCategoryItem TestCategory="Logic" />
+      </TestCategory>
+      <Execution id="756684b2-1e82-4789-888c-a41cd8d918f8" />
+      <TestMethod codeBase="D:\a\1\s\DotNetOwinWebApiSample.Api.Test\bin\Debug\DotNetOwinWebApiSample.Api.Test.dll" adapterTypeName="executor://mstestadapter/v2" className="DotNetOwinWebApiSample.Api.Test.Services.TodoServiceTest" name="Get_ById_正常系" />
+    </UnitTest>
+    <UnitTest name="Get_正常系" storage="d:\a\1\s\dotnetowinwebapisample.api.test\bin\debug\dotnetowinwebapisample.api.test.dll" id="7c450ccc-56e2-3f84-48f6-d34f02953440">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Greeting" />
+        <TestCategoryItem TestCategory="Logic" />
+      </TestCategory>
+      <Execution id="d6fa8ceb-b564-4747-b3e5-f572775c4c15" />
+      <TestMethod codeBase="D:\a\1\s\DotNetOwinWebApiSample.Api.Test\bin\Debug\DotNetOwinWebApiSample.Api.Test.dll" adapterTypeName="executor://mstestadapter/v2" className="DotNetOwinWebApiSample.Api.Test.Services.GreetingServiceTest" name="Get_正常系" />
+    </UnitTest>
+    <UnitTest name="Get_ById_対象無し" storage="d:\a\1\s\dotnetowinwebapisample.api.test\bin\debug\dotnetowinwebapisample.api.test.dll" id="74cae8b0-b218-ea53-604d-170265047e39">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Todo" />
+        <TestCategoryItem TestCategory="Logic" />
+      </TestCategory>
+      <Execution id="2a2bd2fe-7b77-4eb0-b6ad-c870ef8df052" />
+      <TestMethod codeBase="D:\a\1\s\DotNetOwinWebApiSample.Api.Test\bin\Debug\DotNetOwinWebApiSample.Api.Test.dll" adapterTypeName="executor://mstestadapter/v2" className="DotNetOwinWebApiSample.Api.Test.Services.TodoServiceTest" name="Get_ById_対象無し" />
+    </UnitTest>
+    <UnitTest name="Get_正常系" storage="d:\a\1\s\dotnetowinwebapisample.api.test\bin\debug\dotnetowinwebapisample.api.test.dll" id="c8a28c7f-ca94-d7f2-60de-0c23118982f8">
+      <TestCategory>
+        <TestCategoryItem TestCategory="Todo" />
+        <TestCategoryItem TestCategory="Logic" />
+      </TestCategory>
+      <Execution id="a37aa16f-bd1e-49c9-896f-225f158265e1" />
+      <TestMethod codeBase="D:\a\1\s\DotNetOwinWebApiSample.Api.Test\bin\Debug\DotNetOwinWebApiSample.Api.Test.dll" adapterTypeName="executor://mstestadapter/v2" className="DotNetOwinWebApiSample.Api.Test.Services.TodoServiceTest" name="Get_正常系" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="74cae8b0-b218-ea53-604d-170265047e39" executionId="2a2bd2fe-7b77-4eb0-b6ad-c870ef8df052" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="40a0a59e-c5cb-e89f-b511-516775ecc8ab" executionId="756684b2-1e82-4789-888c-a41cd8d918f8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9ef92dfc-f5d4-92e1-92c8-09cadb414909" executionId="06592cc5-0f67-4c46-9e40-0c60e4ef959b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="345e54eb-29ee-4140-8a1d-fbd271cba37b" executionId="4ad13e8b-4277-4e8b-b782-e9ff1117a410" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a23234f6-39ed-c19f-e207-671cd7ef9f03" executionId="40ce2b00-7463-45b2-8ae0-9be116519b42" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c8a28c7f-ca94-d7f2-60de-0c23118982f8" executionId="a37aa16f-bd1e-49c9-896f-225f158265e1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3cfe85f9-2f1f-e14c-b8a1-9a6e63014497" executionId="9206d939-26be-43e5-94de-67b90b329178" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7c450ccc-56e2-3f84-48f6-d34f02953440" executionId="d6fa8ceb-b564-4747-b3e5-f572775c4c15" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="14" executed="14" passed="14" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+</TestRun>
