@@ -55,13 +55,12 @@ namespace TrxConverter.CommonLibrary.Models
         public TestReportLineMap()
         {
             AutoMap(CultureInfo.CurrentCulture);
-            Map(m => m.Duration).TypeConverterOption.Format("HH:mm:ss");
-            Map(m => m.StartTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss");
-            Map(m => m.EndTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss");
-            Map(m => m.ParameterTestDuration).TypeConverterOption.Format("HH:mm:ss");
-            Map(m => m.ParameterTestStartTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss");
-            Map(m => m.ParameterTestEndTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss");
-
+            Map(m => m.Duration).TypeConverterOption.Format("HH:mm:ss.fffffff");
+            Map(m => m.StartTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss.fffffff");
+            Map(m => m.EndTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss.fffffff");
+            Map(m => m.ParameterTestDuration).TypeConverterOption.Format("HH:mm:ss.fffffff");
+            Map(m => m.ParameterTestStartTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss.fffffff");
+            Map(m => m.ParameterTestEndTime).TypeConverterOption.Format("yyyy/MM/dd HH:mm:ss.fffffff");
         }
     }
 }

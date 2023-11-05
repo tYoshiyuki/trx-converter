@@ -153,9 +153,9 @@ namespace TrxConverter.CommonLibrary.Test.Logic
                     TestId = "TestId001",
                     TestName = "Namespace.TestName001",
                     Outcome = "Outcome001",
-                    Duration = "2019/12/31 10:00:00",
-                    StartTime = "2019/12/31 11:00:00",
-                    EndTime = "2019/12/31 12:00:00",
+                    Duration = "2019/12/31 10:00:00.1234567",
+                    StartTime = "2019/12/31 11:00:00.1234567",
+                    EndTime = "2019/12/31 12:00:00.1234567",
                     Output = new Output
                     {
                         ErrorInfo = new ErrorInfo
@@ -195,9 +195,9 @@ namespace TrxConverter.CommonLibrary.Test.Logic
                         {
                             TestName = "Namespace.InnerTestName001",
                             Outcome = "InnerOutcome001",
-                            Duration = "2019/12/31 10:00:00",
-                            StartTime = "2019/12/31 11:00:00",
-                            EndTime = "2019/12/31 12:00:00",
+                            Duration = "2019/12/31 10:00:00.1234567",
+                            StartTime = "2019/12/31 11:00:00.1234567",
+                            EndTime = "2019/12/31 12:00:00.1234567",
                             Output = new Output
                             {
                                 ErrorInfo = new ErrorInfo
@@ -211,9 +211,9 @@ namespace TrxConverter.CommonLibrary.Test.Logic
                         {
                             TestName = "Namespace.InnerTestName002",
                             Outcome = "InnerOutcome002",
-                            Duration = "2019/12/31 10:10:00",
-                            StartTime = "2019/12/31 11:10:00",
-                            EndTime = "2019/12/31 12:10:00",
+                            Duration = "2019/12/31 10:10:00.1234567",
+                            StartTime = "2019/12/31 11:10:00.1234567",
+                            EndTime = "2019/12/31 12:10:00.1234567",
                             Output = new Output
                             {
                                 ErrorInfo = new ErrorInfo
