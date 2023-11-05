@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>TrxConverter</id>
-    <version>1.0.7.0</version>
+    <version>1.0.8.0</version>
     <title>TrxConverter</title>
     <authors>yoshiyuki tsunomoto</authors>
     <owners>yoshiyuki tsunomoto</owners>
