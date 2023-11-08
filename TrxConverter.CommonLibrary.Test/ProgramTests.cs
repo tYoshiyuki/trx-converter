@@ -13,6 +13,10 @@ namespace TrxConverter.CommonLibrary.Test
         private const string TestFileName02 = "sample-data-20200102.trx";
         private const string TestFileName03 = "sample-data-20200103.trx";
         private const string TestFileName04 = "sample-data-20200104-*.trx";
+        private const string NgTestFileName01 = "sample-ngdata-20200101.trx";
+        private const string NgTestFileName02 = "sample-ngdata-20200102.trx";
+        private const string NgTestFileName03 = "sample-ngdata-20200103.trx";
+        private const string NgTestFileName04 = "sample-ngdata-20200104-*.trx";
         private const string ExpectedConsoleOutText = @"
 TrxConverter
 
@@ -26,10 +30,30 @@ Usage:
 
         [Theory]
         [MemberData(nameof(TestData))]
-        public void 正常系(string path)
+        public void 正常系_プレイリスト出力無(string path, string[] expectedList)
         {
             // Arrange・Act・Assert
             Assert.True(Program.Main(new[] { path }));
+
+            foreach (var expected in expectedList)
+            {
+                Assert.True(File.Exists($"{Path.GetFileNameWithoutExtension(expected)}.csv"));
+                Assert.False(File.Exists($"{Path.GetFileNameWithoutExtension(expected)}.playlist"));
+            }
+        }
+
+        [Theory]
+        [MemberData(nameof(NgTestData))]
+        public void 正常系_プレイリスト出力有(string path, string[] expectedList)
+        {
+            // Arrange・Act・Assert
+            Assert.True(Program.Main(new[] { path }));
+
+            foreach (var expected in expectedList)
+            {
+                Assert.True(File.Exists($"{Path.GetFileNameWithoutExtension(expected)}.csv"));
+                Assert.True(File.Exists($"{Path.GetFileNameWithoutExtension(expected)}.playlist"));
+            }
         }
 
         [Fact]
@@ -107,10 +131,18 @@ Usage:
 
         public static IEnumerable<object[]> TestData()
         {
-            yield return new object[] { TestFileName01 };
-            yield return new object[] { Path.Combine(".", TestFileName02) };
-            yield return new object[] { Path.Combine(Directory.GetCurrentDirectory(), TestFileName03) };
-            yield return new object[] { TestFileName04 };
+            yield return new object[] { TestFileName01, new [] { TestFileName01 } };
+            yield return new object[] { Path.Combine(".", TestFileName02), new[] { TestFileName02 } };
+            yield return new object[] { Path.Combine(Directory.GetCurrentDirectory(), TestFileName03), new[] { TestFileName03 } };
+            yield return new object[] { TestFileName04, new[] { "sample-data-20200104-01.trx", "sample-data-20200104-02.trx", "sample-data-20200104-03.trx" } };
+        }
+
+        public static IEnumerable<object[]> NgTestData()
+        {
+            yield return new object[] { NgTestFileName01, new[] { NgTestFileName01 } };
+            yield return new object[] { Path.Combine(".", NgTestFileName02), new[] { NgTestFileName02 } };
+            yield return new object[] { Path.Combine(Directory.GetCurrentDirectory(), NgTestFileName03), new[] { NgTestFileName03 } };
+            yield return new object[] { NgTestFileName04, new[] { "sample-ngdata-20200104-01.trx", "sample-ngdata-20200104-02.trx", "sample-ngdata-20200104-03.trx" } };
         }
     }
 }

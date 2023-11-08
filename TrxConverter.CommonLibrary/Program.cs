@@ -53,11 +53,28 @@ namespace TrxConverter.CommonLibrary
 
                         var report = ConvertLogic.Convert(model);
 
+                        // NOTE csvファイル出力
                         using (var writer = new StreamWriter($"{Path.GetFileNameWithoutExtension(file)}.csv", false, new UTF8Encoding(true)))
                         using (var csv = new CsvWriter(writer, CultureInfo.CurrentCulture))
                         {
                             csv.Context.RegisterClassMap<TestReportLineMap>();
                             csv.WriteRecords(report);
+                        }
+
+                        // NOTE playlistファイル出力
+                        var ngLines = report.Where(x => x.OutCome == "Failed");
+                        if (ngLines.Any())
+                        {
+                            using (var writer = new StreamWriter($"{Path.GetFileNameWithoutExtension(file)}.playlist", false, new UTF8Encoding(true)))
+                            {
+                                writer.WriteLine("<Playlist Version=\"1.0\">");
+                                foreach (var line in report.Where(x => x.OutCome == "Failed"))
+                                {
+                                    // HACK パラメタライズドテストの場合 テストケース名 + (パラメータ名) となるため、不要な文字列をトリミングする
+                                    writer.WriteLine($"  <Add Test=\"{line.TestClassName}.{line.TestCaseName.Split(' ').First()}\" />");
+                                }
+                                writer.WriteLine("</Playlist>");
+                            }
                         }
                     }
                 }
