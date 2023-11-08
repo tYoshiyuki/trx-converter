@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>TrxConverter</id>
-    <version>1.0.8.0</version>
+    <version>1.0.9.0-alpha</version>
     <title>TrxConverter</title>
     <authors>yoshiyuki tsunomoto</authors>
     <owners>yoshiyuki tsunomoto</owners>
@@ -12,26 +12,28 @@
     <description>Convert .trx file to CSV</description>
     <language>en-US</language>
     <tags></tags>
+    <readme>.\README.md</readme>
   </metadata>
   <files>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\CsvHelper.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\CsvHelper.xml" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Bcl.HashCode.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Bcl.HashCode.xml" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Buffers.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Buffers.xml" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Memory.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Memory.xml" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Numerics.Vectors.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Numerics.Vectors.xml" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Tasks.Extensions.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Tasks.Extensions.xml" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.CommonLibrary.dll" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.ConsoleApp.exe" target="tools"/>
-   <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.ConsoleApp.exe.config" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\README.md" target="" />
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\CsvHelper.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\CsvHelper.xml" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Bcl.HashCode.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\Microsoft.Bcl.HashCode.xml" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Buffers.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Buffers.xml" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Memory.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Memory.xml" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Numerics.Vectors.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Numerics.Vectors.xml" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Tasks.Extensions.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\System.Threading.Tasks.Extensions.xml" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.CommonLibrary.dll" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.ConsoleApp.exe" target="tools"/>
+    <file src="..\TrxConverter.ConsoleApp\bin\Release\TrxConverter.ConsoleApp.exe.config" target="tools"/>
   </files>
 </package>
