@@ -55,4 +55,25 @@
     <ProjectReference Include="..\TrxConverter.CommonLibrary\TrxConverter.CommonLibrary.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="sample-ngdata-20200101.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="sample-ngdata-20200102.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="sample-ngdata-20200103.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="sample-ngdata-20200104-01.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="sample-ngdata-20200104-02.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="sample-ngdata-20200104-03.trx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
