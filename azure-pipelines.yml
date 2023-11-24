@@ -102,14 +102,13 @@ stages:
         echo Get attachments info.
         echo --------------------------------------------
         echo
-        curl -s -L -X GET "${url}/test/runs/${runId}/attachments?api-version=5.1" \
-        --header "Authorization: Bearer ${token}" | jq ".value[]"
+        id=$(curl -s -L -X GET "${url}/test/runs/${runId}/attachments?api-version=5.1" \
+        --header "Authorization: Bearer ${token}" | jq ".value[] | select(.fileName | endswith(\".trx\")) | .id")
         echo --------------------------------------------
         echo Get trx.
         echo --------------------------------------------
         echo
-        # id=1 に trx が存在することを想定して取得
-        curl -o "./${testTitle}.trx" -s -L -X GET "${url}/test/runs/${runId}/attachments/1?api-version=7.1-preview.1" \
+        curl -o "./${testTitle}.trx" -s -L -X GET "${url}/test/runs/${runId}/attachments/${id}?api-version=7.1-preview.1" \
         --header "Authorization: Bearer ${token}"
         echo --------------------------------------------
         echo Convert trx to csv.
