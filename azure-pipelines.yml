@@ -6,62 +6,153 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'windows-2022'
-
 variables:
   solution: '**/*.sln'
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Debug'
 
-steps:
-- task: UseDotNet@2
-  displayName: 'Use .NET6 sdk'
-  inputs:
-    packageType: sdk
-    version: 6.0.x
-    installationPath: $(Agent.ToolsDirectory)/dotnet
+stages:
+- stage: BuildAndTestStage
+  pool:
+    vmImage: 'windows-2022'
+  jobs:
+  - job: BuildAndTest
+    steps:
+    - task: UseDotNet@2
+      displayName: 'Use .NET6 sdk'
+      inputs:
+        packageType: sdk
+        version: 6.0.x
+        installationPath: $(Agent.ToolsDirectory)/dotnet
 
-- task: NuGetToolInstaller@1
+    - task: NuGetToolInstaller@1
 
-- task: NuGetCommand@2
-  inputs:
-    restoreSolution: '$(solution)'
+    - task: NuGetCommand@2
+      inputs:
+        restoreSolution: '$(solution)'
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    - task: VSBuild@1
+      inputs:
+        solution: '$(solution)'
+        msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:PackageLocation="$(build.artifactStagingDirectory)"'
+        platform: '$(buildPlatform)'
+        configuration: '$(buildConfiguration)'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: test
-    projects: TrxConverter.CommonLibrary.Test/TrxConverter.CommonLibrary.Test.csproj
-    arguments: -c $(buildConfiguration) --logger "trx;logfilename=$(Build.DefinitionName)_$(Build.BuildNumber)_$(Build.BuildId).trx" --collect:"XPlat Code Coverage" -- RunConfiguration.DisableAppDomain=true
-    testRunTitle: $(Build.DefinitionName)_$(Build.BuildNumber)_$(Build.BuildId)
-  displayName: 'Run tests'
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: test
+        projects: TrxConverter.CommonLibrary.Test/TrxConverter.CommonLibrary.Test.csproj
+        arguments: -c $(buildConfiguration) --logger "trx;logfilename=$(Build.DefinitionName)_$(Build.BuildNumber)_$(Build.BuildId).trx" --collect:"XPlat Code Coverage" -- RunConfiguration.DisableAppDomain=true
+        testRunTitle: $(Build.DefinitionName)_$(Build.BuildNumber)_$(Build.BuildId)
+      displayName: 'Run tests'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: custom
-    custom: tool
-    arguments: install --tool-path . dotnet-reportgenerator-globaltool
-  displayName: Install ReportGenerator tool
-  
-- script: reportgenerator -reports:$(Agent.TempDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/coverlet/reports -reporttypes:"Cobertura"
-  displayName: 'Create reports'
-  
-- task: PublishCodeCoverageResults@1
-  displayName: 'Publish code coverage'
-  inputs:
-    codeCoverageTool: Cobertura
-    summaryFileLocation: $(Build.SourcesDirectory)/coverlet/reports/Cobertura.xml  
+    - task: DotNetCoreCLI@2
+      inputs:
+        command: custom
+        custom: tool
+        arguments: install --tool-path . dotnet-reportgenerator-globaltool
+      displayName: Install ReportGenerator tool
+      
+    - script: reportgenerator -reports:$(Agent.TempDirectory)/**/coverage.cobertura.xml -targetdir:$(Build.SourcesDirectory)/coverlet/reports -reporttypes:"Cobertura"
+      displayName: 'Create reports'
+      
+    - task: PublishCodeCoverageResults@1
+      displayName: 'Publish code coverage'
+      inputs:
+        codeCoverageTool: Cobertura
+        summaryFileLocation: $(Build.SourcesDirectory)/coverlet/reports/Cobertura.xml  
 
-- task: PublishTestResults@2
-  displayName: 'Publish test results'
-  inputs:
-    testResultsFormat: 'XUnit'
-    testResultsFiles: '$(Agent.TempDirectory)/**/*.trx'
-    testRunTitle: $(Build.DefinitionName)_$(Build.BuildNumber)_$(Build.BuildId)
+    - task: PublishTestResults@2
+      displayName: 'Publish test results'
+      inputs:
+        testResultsFormat: 'XUnit'
+        testResultsFiles: '$(Agent.TempDirectory)/**/*.trx'
+        testRunTitle: $(Build.DefinitionName)_$(Build.BuildNumber)_$(Build.BuildId)
+
+- stage: ConvertTrxStage
+  pool:
+    vmImage: 'ubuntu-22.04'
+  jobs:
+  - job: ConvertTrx
+    steps:
+    - checkout: none
+    - task: NuGetCommand@2
+      inputs:
+        command: custom
+        arguments: 'install TrxConverter -Version 1.0.9 -OutputDirectory packages'
+    - script: |
+        token=$(System.AccessToken)
+        testTitle=$(Build.DefinitionName)_$(Build.BuildNumber)_$(Build.BuildId)
+        url=$(System.CollectionUri)$(System.TeamProject)/_apis
+        echo --------------------------------------------
+        echo testTitle: [$testTitle]
+        echo --------------------------------------------
+        echo
+        echo --------------------------------------------
+        echo Get runId.
+        echo --------------------------------------------
+        echo
+        runId=$(curl -s -L -X GET "${url}/test/runs?api-version=5.1" \
+        --header "Authorization: Bearer ${token}" | jq ".value[] | select(.name == \"${testTitle}\") | .id")
+        echo --------------------------------------------
+        echo runId: [$runId]
+        echo --------------------------------------------
+        echo
+        echo --------------------------------------------
+        echo Get attachments info.
+        echo --------------------------------------------
+        echo
+        curl -s -L -X GET "${url}/test/runs/${runId}/attachments?api-version=5.1" \
+        --header "Authorization: Bearer ${token}" | jq ".value[]"
+        echo --------------------------------------------
+        echo Get trx.
+        echo --------------------------------------------
+        echo
+        # id=1 に trx が存在することを想定して取得
+        curl -o "./${testTitle}.trx" -s -L -X GET "${url}/test/runs/${runId}/attachments/1?api-version=7.1-preview.1" \
+        --header "Authorization: Bearer ${token}"
+        echo --------------------------------------------
+        echo Convert trx to csv.
+        echo --------------------------------------------
+        echo
+        ./packages/TrxConverter.1.0.9/tools/TrxConverter.ConsoleApp.exe "./${testTitle}.trx"
+        echo --------------------------------------------
+        ls -l
+        echo --------------------------------------------
+        data=$(base64 "./${testTitle}.csv")
+        echo "{
+          \"stream\": \"${data}\",
+          \"fileName\": \"${testTitle}.csv\",
+          \"comment\": \"Csv upload\",
+          \"attachmentType\": \"GeneralAttachment\"
+        }" > ./data.json
+        echo --------------------------------------------
+        echo Upload csv.
+        echo --------------------------------------------
+        echo
+        curl -s -L -X POST "${url}/test/Runs/${runId}/attachments?api-version=7.1-preview.1" \
+        --header 'Content-Type: application/json' \
+        --header "Authorization: Bearer ${token}" \
+        -d @./data.json
+        echo
+        if [ -e "./${testTitle}.playlist" ]; then
+          data=$(base64 "./${testTitle}.playlist")
+          echo "{
+            \"stream\": \"${data}\",
+            \"fileName\": \"${testTitle}.playlist\",
+            \"comment\": \"Playlist upload\",
+            \"attachmentType\": \"GeneralAttachment\"
+          }" > ./data.json
+          echo --------------------------------------------
+          echo Upload playlist.
+          echo --------------------------------------------
+          echo
+          curl -s -L -X POST "${url}/test/Runs/${runId}/attachments?api-version=7.1-preview.1" \
+          --header 'Content-Type: application/json' \
+          --header "Authorization: Bearer ${token}" \
+          -d  @./data.json
+          echo
+        else
+          exit 0
+        fi
+      displayName: 'test'
