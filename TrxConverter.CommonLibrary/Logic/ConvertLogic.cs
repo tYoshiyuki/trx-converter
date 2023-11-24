@@ -5,11 +5,23 @@ using TrxConverter.CommonLibrary.Models;
 
 namespace TrxConverter.CommonLibrary.Logic
 {
+    /// <summary>
+    /// 変換ロジッククラス
+    /// </summary>
     public static class ConvertLogic
     {
+        /// <summary>
+        /// <see cref="TestRun"/> を <see cref="TestReportLine"/>のリストに変換します。
+        /// </summary>
+        /// <param name="testRun"><see cref="TestRun"/></param>
+        /// <returns><see cref="TestReportLine"/>のリスト</returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static List<TestReportLine> Convert(TestRun testRun)
         {
-            if (testRun == null) throw new ArgumentNullException(nameof(testRun));
+            if (testRun == null)
+            {
+                throw new ArgumentNullException(nameof(testRun));
+            }
 
             var report = new List<TestReportLine>();
             foreach (var result in testRun.Results ?? Enumerable.Empty<UnitTestResult>())
