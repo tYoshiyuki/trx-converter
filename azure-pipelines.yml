@@ -154,4 +154,4 @@ stages:
         else
           exit 0
         fi
-      displayName: 'test'
+      displayName: 'Convert trx to csv'
