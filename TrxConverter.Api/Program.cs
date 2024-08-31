@@ -1,4 +1,5 @@
 using System.Reflection;
+using TrxConverter.Api.Services;
 
 namespace TrxConverter.Api
 {
@@ -8,6 +9,7 @@ namespace TrxConverter.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            builder.Services.AddTransient<ITempFolderService, TempFolderService>();
             builder.Services.AddRouting(options => options.LowercaseUrls = true);
             builder.Services.AddControllers();
 
@@ -20,11 +22,8 @@ namespace TrxConverter.Api
 
             var app = builder.Build();
 
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseSwagger();
-                app.UseSwaggerUI();
-            }
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseAuthorization();
 

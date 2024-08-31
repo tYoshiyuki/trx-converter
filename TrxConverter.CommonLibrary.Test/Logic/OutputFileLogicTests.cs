@@ -65,5 +65,17 @@ namespace TrxConverter.CommonLibrary.Test.Logic
             Assert.False(File.Exists(path));
         }
 
+        [Fact]
+        public void OutputPlaylistFile_正常系_引数がNULL()
+        {
+            // Arrange
+            var path = "OutputPlaylistFile_正常系_引数がNULL.playlist";
+
+            // Act
+            OutputFileLogic.OutputPlaylistFile(null, path);
+
+            // Assert
+            Assert.False(File.Exists(path));
+        }
     }
 }
