@@ -114,7 +114,7 @@ namespace TrxConverter.CommonLibrary.Test.Logic
 
             // Assert
             Assert.NotNull(result);
-            Assert.Equal(5, result.Count);
+            Assert.Equal(6, result.Count);
 
             var i = 0;
             foreach (var resultLine in result.Take(3))
@@ -222,6 +222,15 @@ namespace TrxConverter.CommonLibrary.Test.Logic
                                     StackTrace = "InnerStackTrace002"
                                 }
                             }
+                        },
+                        new InnerUnitTestResult
+                        {
+                            TestName = "Namespace.InnerTestName003",
+                            Outcome = "InnerOutcome003",
+                            Duration = "2019/12/31 10:20:00.1234567",
+                            StartTime = "2019/12/31 11:20:00.1234567",
+                            EndTime = "2019/12/31 12:20:00.1234567",
+                            Output = null,
                         }
                     }
                 }
