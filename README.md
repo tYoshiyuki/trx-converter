@@ -43,3 +43,7 @@ TrxConverter.ConsoleApp.exe <変換対象.trxファイルパス>
   <!-- ・・・以下、失敗したテストケースを出力します。 -->
 </Playlist>
 ```
+
+# Sample Site
+- trx-converter を REST API に組込んだサンプルサイトは[こちら](https://trx-converter-api-frhkeegua3cacccw.japaneast-01.azurewebsites.net/swagger/index.html) です。
+  - 詳細は TrxConverter.Api をご覧下さい。
